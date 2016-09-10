@@ -10,3 +10,5 @@ while 1 :
         break
     wordmap = line.split("\t")
     words.append(wordmap[0])
+for k in words :
+    print k + " "
