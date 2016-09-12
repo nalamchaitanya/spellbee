@@ -1,13 +1,12 @@
-import os
 import csv
-import numpy
+import spellcheck
 
 delMatrix = [];
 subMatrix = [];
 addMatrix = [];
 revMatrix = [];
 
-with open('../data/del.csv', 'r') as f:
+with open(spellcheck.DATA + '/del.csv', 'r') as f:
     thedata = csv.reader(f)
     for row in thedata:
         temp=[];
@@ -15,7 +14,7 @@ with open('../data/del.csv', 'r') as f:
             temp.append(int(elem));
         delMatrix.append(temp);
 
-with open('../data/sub.csv', 'r') as f:
+with open(spellcheck.DATA + '/sub.csv', 'r') as f:
     thedata = csv.reader(f)
     for row in thedata:
         temp=[];
@@ -23,7 +22,7 @@ with open('../data/sub.csv', 'r') as f:
             temp.append(int(elem));
         subMatrix.append(temp);
 
-with open('../data/add.csv', 'r') as f:
+with open(spellcheck.DATA + '/add.csv', 'r') as f:
     thedata = csv.reader(f)
     for row in thedata:
         temp=[];
@@ -31,7 +30,7 @@ with open('../data/add.csv', 'r') as f:
             temp.append(int(elem));
         addMatrix.append(temp);
 
-with open('../data/rev.csv', 'r') as f:
+with open(spellcheck.DATA + '/rev.csv', 'r') as f:
     thedata = csv.reader(f)
     for row in thedata:
         temp=[];
