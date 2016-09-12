@@ -34,3 +34,5 @@ def gen_candidates(word):
     allWords = (set([word]) | edits1(word) | edits2(word))
     candidates = [w for w in allWords if w in words]
     return candidates
+
+
