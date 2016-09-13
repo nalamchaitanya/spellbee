@@ -14,7 +14,7 @@ import time
 # print 'hi'
 
 # print editsex[0][1][0]
-#spellcheck.writecharXYcharsX()
+
 
 #(charsXY,charsX) = spellcheck.readcharsXYcharsX()
 
