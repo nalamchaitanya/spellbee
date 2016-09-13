@@ -1,38 +1,14 @@
 import spellcheck
+import time
 
+from spellcheck.bktree import *
 
-def get_dictionary(name):
-    ret = []
-    f = open(spellcheck.DATA + '/' + name, 'r')
-    while True:
-        line = f.readline()
-        if line is None:
-            break
-        if len(line) == 0:
-            break
-        wordmap = line.split("\t")
-        ret.append(wordmap[0].lower())
-    return ret;
+words = [line.strip() for line in open(spellcheck.DATA+"/dict.txt",'r')]
 
+tree = BKTree(levenshtein,dict_words('/home/rajiv/CodingIsFun/spellbee/data/dict.txt'))
 
+print time.time()
+print tree.query("rajiv", 2)
+print time.time()
 
-def edits1(word):
-    lc = 'abcdefghijklmnopqrstuvwxyz'
-    splits = [(word[:i], word[i:]) for i in range(len(word) + 1)]
-    deletes = [L + R[1:] for L, R in splits if R]
-    additions = [L + c + R for L, R in splits for c in lc]
-    substitutions = [L + c + R[1:] for L, R in splits if R for c in lc]
-    transponses = [L + R[1] + R[0] + R[2:] for L, R in splits if len(R) > 1]
-    return set(deletes + additions + substitutions + transponses)
-
-
-def edits2(word):
-    return set([e2 for e1 in edits1(word) for e2 in edits1(e1)])
-
-
-def gen_candidates(word):
-    allWords = (set([word]) | edits1(word) | edits2(word))
-    candidates = [w for w in allWords if w in words]
-    return candidates
-
-
+# FIN NNE
