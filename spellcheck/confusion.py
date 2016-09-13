@@ -11,6 +11,8 @@ with open(spellcheck.DATA + '/del.csv', 'r') as f:
     for row in thedata:
         temp=[];
         for elem in row:
+            if int(elem) == 0:  # Smoothing
+                elem = int(elem) + 1
             temp.append(int(elem));
         delMatrix.append(temp);
 
@@ -19,6 +21,8 @@ with open(spellcheck.DATA + '/sub.csv', 'r') as f:
     for row in thedata:
         temp=[];
         for elem in row:
+            if int(elem) == 0:  # Smoothing
+                elem = int(elem) + 1
             temp.append(int(elem));
         subMatrix.append(temp);
 
@@ -27,7 +31,9 @@ with open(spellcheck.DATA + '/add.csv', 'r') as f:
     for row in thedata:
         temp=[];
         for elem in row:
-            temp.append(int(elem));
+            if int(elem) == 0:  # Smoothing
+                elem = int(elem)+ 1
+            temp.append(elem);
         addMatrix.append(temp);
 
 with open(spellcheck.DATA + '/rev.csv', 'r') as f:
@@ -35,6 +41,8 @@ with open(spellcheck.DATA + '/rev.csv', 'r') as f:
     for row in thedata:
         temp=[];
         for elem in row:
+            if int(elem) == 0:  # Smoothing
+                elem = int(elem) + 1
             temp.append(int(elem));
         revMatrix.append(temp);
 

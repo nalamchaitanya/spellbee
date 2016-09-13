@@ -12,14 +12,21 @@ def bigrams_count(filename):
         line=line.split("\t")
         words += [(line[0].upper(),int(re.split("[A-Z]",line[1])[0]))]
         line=f.readline()
+    sum = 0
+    for p in words:
+        sum += p[1]
+    scale = float(sum)/float(44000000)
     bigramstemp = map (divide_word,words)
     bigrams =  [l for bi in bigramstemp for l in bi]
     unigrams = [(l,word[1]) for word in words for l in word[0]]
     charsXY = [[0]*26 for i in range(26)]
     charsX = [0]*26
-    charsXY =map(lambda p: increment(p,charsXY),bigrams)
-    charsX = map(lambda p: increment1(p,charsX),unigrams)
-    return (charsXY,charsX)
+    map(lambda p: increment(p,charsXY),bigrams)
+    map(lambda p: increment1(p,charsX),unigrams)
+    charsX = map(lambda p: float(p)/float(scale) ,charsX)
+    charsXY = map(lambda ps: map(lambda p: float(p) / float(scale),ps), charsXY)
+    wordfrequencies = map(lambda p : (p[0] , float(p[1])/float(scale) ),words)
+    return (charsXY,charsX,wordfrequencies)
 
 def increment(p,charsXY):
     charsXY[(ord(p[0][0]) - ord('A'))][(ord(p[0][1]) - ord('A'))] += p[1]
@@ -34,7 +41,7 @@ def divide_word(word):
 
 
 def writecharXYcharsX():
-    (charsXY, charsX) = bigrams_count("norvig.txt")
+    (charsXY,charsX,wordfrqs) = bigrams_count("norvig.txt")
     target = open(spellcheck.DATA + '/charsXY.csv', 'wb')
     for i in range(26):
         target.write(str(charsXY[i][0]))
@@ -48,27 +55,41 @@ def writecharXYcharsX():
         target.write(","+str(charsX[i]))
     target.write("\n")
     target.close()
+    target = open(spellcheck.DATA + '/wordfrequencies_scaled.csv', 'wb')
+    target.write(wordfrqs[0][0] + "," + str(wordfrqs[0][1]))
+    for i in range(len(wordfrqs)):
+        target.write(wordfrqs[i][0] + "," + str(wordfrqs[i][1]))
+        target.write("\n")
+    target.close()
 
 #def readcharsXYcharsX():
+
 charsXY = [];
 charsX = [];
+wordfrqs = {};
 
-with open(spellcheck.DATA + '/charsXY.csv', 'r') as f:
-    thedata = csv.reader(f)
-    for row in thedata:
-        temp=[];
-        for elem in row:
-            temp.append(float(elem));
-        charsXY.append(temp);
+def readcharsXYcharsX():
+    with open(spellcheck.DATA + '/charsXY.csv', 'r') as f:
+        thedata = csv.reader(f)
+        for row in thedata:
+            temp=[];
+            for elem in row:
+                temp.append(float(elem));
+            charsXY.append(temp);
 
-with open(spellcheck.DATA + '/charsX.csv', 'r') as f:
-    thedata = csv.reader(f)
-    for row in thedata:
-        for elem in row:
-            charsX.append(float(elem));
-charsXsum = sum(charsX)
-charsX = map(lambda p: p / float(charsXsum), charsX)
-charsXY = [map(lambda p: p / float(charsXsum), x) for x in charsXY]
+    with open(spellcheck.DATA + '/charsX.csv', 'r') as f:
+        thedata = csv.reader(f)
+        for row in thedata:
+            for elem in row:
+                charsX.append(float(elem));
+    with open(spellcheck.DATA + '/wordfrequencies_scaled.csv', 'r') as f:
+        thedata = csv.reader(f)
+        for row in thedata:
+            wordfrqs[row[0]] = float(re.split("[A-Z]",row[1])[0])
+
+#charsXsum = sum(charsX)
+#charsX = map(lambda p: p / float(charsXsum), charsX)
+#charsXY = [map(lambda p: p / float(charsXsum), x) for x in charsXY]
 
 
             #   return (charsXY,charsX)
