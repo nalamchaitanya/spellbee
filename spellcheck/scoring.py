@@ -34,7 +34,7 @@ def tranformation(T,C):
         for j in range(1,M+1):
             l = 0 if (T[i]==C[j]) else 1
             dist_matrix[i][j] = min ( (dist_matrix[i-1][j] + 1),(dist_matrix[i][j-1] + 1),(dist_matrix[i-1][j-1] + l))
-	possible_transformations = get_transformations(N,M,T,C,dist_matrix)
+    possible_transformations = get_transformations(N,M,T,C,dist_matrix)
     return possible_transformations
 
 def get_transformations(i,j,T,C,dist_matrix):
