@@ -1,9 +1,10 @@
-#import spellcheck
+import spellcheck
 
-def score(edits):
+def score(multi_edits):
     total_pblty =0
     for edits in multi_edits:
         res = 1
+        print edits
         for edit in edits:
             if edit[0]== "sub":
                 res *= float(spellcheck.subMat(edit[1][0], edit[1][1]))/float(spellcheck.charCount(edit[1][1]))
@@ -13,6 +14,8 @@ def score(edits):
                 res *= float(spellcheck.addMat(edit[1][0], edit[1][1])) / float(spellcheck.charCount(edit[1][0]))
             elif edit[0] == "rev":
                 res *= float(spellcheck.revMat(edit[1][0], edit[1][1])) / float(spellcheck.charsCooc(edit[1][0], edit[1][1]))
+        if(len(edits)>=2):
+            res = res/float(spellcheck.charsXsum**(len(edits)-1))
         total_pblty += res
     return total_pblty
 

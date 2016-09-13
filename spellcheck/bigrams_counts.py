@@ -1,6 +1,6 @@
 import spellcheck
 import re
-
+import csv
 
 def bigrams_count(filename):
     f = open(spellcheck.DATA + '/' + filename,'r')
@@ -17,12 +17,9 @@ def bigrams_count(filename):
     unigrams = [(l,word[1]) for word in words for l in word[0]]
     charsXY = [[0]*26 for i in range(26)]
     charsX = [0]*26
-    map(lambda p: increment(p,charsXY),bigrams)
-    map(lambda p: increment1(p,charsX),unigrams)
-    charsXsum = sum(charsX)
-    charsXnorm = map(lambda p:p/float(charsXsum),charsX)
-    charsXYnorm = [map(lambda p:p/float(charsXsum),x) for x in charsXY]
-    return (charsXYnorm,charsXnorm)
+    charsXY =map(lambda p: increment(p,charsXY),bigrams)
+    charsX = map(lambda p: increment1(p,charsX),unigrams)
+    return (charsXY,charsX)
 
 def increment(p,charsXY):
     charsXY[(ord(p[0][0]) - ord('A'))][(ord(p[0][1]) - ord('A'))] += p[1]
@@ -35,10 +32,51 @@ def increment1(p,charsXY):
 def divide_word(word):
     return [(word[0][s]+word[0][s+1] , word[1])  for s in range(len(word[0])-1)]
 
+
+def writecharXYcharsX():
+    (charsXY, charsX) = bigrams_count("norvig.txt")
+    target = open(spellcheck.DATA + '/charsXY.csv', 'wb')
+    for i in range(26):
+        target.write(str(charsXY[i][0]))
+        for j in range(1,26):
+            target.write(","+str(charsXY[i][j]))
+        target.write("\n")
+    target.close()
+    target = open(spellcheck.DATA + '/charsX.csv', 'wb')
+    target.write(str(charsX[0]))
+    for i in range(1,26):
+        target.write(","+str(charsX[i]))
+    target.write("\n")
+    target.close()
+
+#def readcharsXYcharsX():
+charsXY = [];
+charsX = [];
+
+with open(spellcheck.DATA + '/charsXY.csv', 'r') as f:
+    thedata = csv.reader(f)
+    for row in thedata:
+        temp=[];
+        for elem in row:
+            temp.append(float(elem));
+        charsXY.append(temp);
+
+with open(spellcheck.DATA + '/charsX.csv', 'r') as f:
+    thedata = csv.reader(f)
+    for row in thedata:
+        for elem in row:
+            charsX.append(float(elem));
+charsXsum = sum(charsX)
+charsX = map(lambda p: p / float(charsXsum), charsX)
+charsXY = [map(lambda p: p / float(charsXsum), x) for x in charsXY]
+
+
+            #   return (charsXY,charsX)
+
+
 def charCount(x):
     return charsX[ord(x.upper())-ord('A')]
 
 def charsCooc(x,y):
     return charsXY[ord(x.upper())-ord('A')][ord(y.upper())-ord('A')]
 
-(charsXY,charsX) = bigrams_count("norvig.txt")
