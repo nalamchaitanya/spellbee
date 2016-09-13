@@ -18,7 +18,7 @@ def score(multi_edits):
             res = res/float(spellcheck.charsXsum**(len(edits)-1))
         total_pblty += res
     return total_pblty
-
+#sahiti is very good
 
 def tranformation(T,C):
     N = len(T)
