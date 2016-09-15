@@ -67,12 +67,16 @@ def correct_phrase(phrase) :
             if ((len(syns1)>0) & (len(syns2)>0)):
                 w1 = wn.synset(syns1[0].name())
                 w2 = wn.synset(syns2[0].name())
-                ans *= w1.wup_similarity(w2)
+                x = w1.wup_similarity(w2)
+                if (x != None) :
+                    ans *= x
 
         d[word] = ans
     return d
 
 d = correct_phrase("peace of cake")
+
+print "\n\n\n\nThe final probabilities are : "
 print d
 
 
