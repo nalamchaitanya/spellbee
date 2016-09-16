@@ -17,9 +17,10 @@ def score(multi_edits,word):
                 res *= float(spellcheck.revMat(edit[1][0], edit[1][1])) / float(spellcheck.charsCooc(edit[1][0], edit[1][1]))
         total_pblty += res
     if( word.lower() not in spellcheck.wordfrqs.keys()):
-        return -1 ;
+        return (-1,-1) ;
+    total_pblty1=total_pblty
     total_pblty =total_pblty * spellcheck.wordfrqs[word.lower()]
-    return total_pblty
+    return (total_pblty,spellcheck.wordfrqs[word.lower()])
 #sahiti is very good
 
 def tranformation(T,C):
