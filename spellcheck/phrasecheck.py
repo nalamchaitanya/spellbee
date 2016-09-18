@@ -59,22 +59,22 @@ def correct_phrase(phrase) :
     for word in confset :
         ans = 1.0
         for k in splits :
+            print k
             syns1 = wn.synsets(word)
             syns2 = wn.synsets(k)
             print syns1
             print syns2
-            print len(syns1) , len(syns2)
             if ((len(syns1)>0) & (len(syns2)>0)):
                 w1 = wn.synset(syns1[0].name())
                 w2 = wn.synset(syns2[0].name())
                 x = w1.wup_similarity(w2)
-                if (x != None) :
+                if (x != None):
                     ans *= x
 
         d[word] = ans
     return d
 
-d = correct_phrase("peace of cake")
+d = correct_phrase("fought among them")
 
 print "\n\n\n\nThe final probabilities are : "
 print d
