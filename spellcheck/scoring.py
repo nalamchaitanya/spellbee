@@ -14,7 +14,7 @@ def score(multi_edits,word):
             elif edit[0] == "add":
                 res *= float(spellcheck.addMat(edit[1][0], edit[1][1])) / float(spellcheck.charCount(edit[1][0]))
             elif edit[0] == "rev":
-                res *= float(spellcheck.revMat(edit[1][0], edit[1][1])) / float(spellcheck.charsCooc(edit[1][0], edit[1][1]))
+                res *= float(spellcheck.revMat(edit[1][0], edit[1][1])) / float(spellcheck.charsCooce(edit[1][0], edit[1][1]))
         total_pblty += res
     if( word.lower() not in spellcheck.wordfrqs.keys()):
         return -1 ;

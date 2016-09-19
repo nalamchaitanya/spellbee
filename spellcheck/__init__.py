@@ -1,24 +1,26 @@
 import os
 import jellyfish
+#from confusion import *
+from bigrams_counts import *
+
+
 PROJECT_DIR=os.pardir
 DATA=PROJECT_DIR+"/data"
-from confusion import *
-#from bigrams_counts import *
 #from wordcheck import *
 from scoring import *
-import time
 
-# if __name__ == "__main__":
-#     spellcheck.words = set(spellcheck.get_dictionary('norvig.txt'))
-#     print spellcheck.gen_candidates('god')
-# print 'hi'
+f = open(DATA+'/w2_.txt','r')
+bigrams = [x.strip() for x in f.readlines()]
+f.close()
 
-# print editsex[0][1][0]
+f = open(DATA+'/w3_.txt','r')
+trigrams = [x.strip() for x in f.readlines()]
+f.close()
 
+f = open(DATA+'/w4_.txt','r')
+fourgrams = [x.strip() for x in f.readlines()]
+f.close()
 
-#(charsXY,charsX) = spellcheck.readcharsXYcharsX()
-
-
-# temp = spellcheck.charCount(editsex[0][1][1])
-# print temp
-# print charsX
+f = open(DATA+'/w5_.txt','r')
+fivegrams = [x.strip() for x in f.readlines()]
+f.close()

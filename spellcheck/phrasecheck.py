@@ -1,7 +1,5 @@
-import nltk
 from nltk.corpus import wordnet as wn
 import spellcheck
-
 filepath = spellcheck.DATA+"/ambiguos-words"
 
 def get_confusion_sets() :
@@ -78,8 +76,6 @@ d = correct_phrase("fought among them")
 
 print "\n\n\n\nThe final probabilities are : "
 print d
-
-
 
 
 

@@ -36,13 +36,11 @@ def split1(word,l) :
         l.remove(l[-1])
 
 
-split1('halloffame',[])
-print list
+
 
 
 '''
 tree = BKTree(levenshtein,dict_words(spellcheck.DATA+'/dict.txt'))
-
 print time.time()
 print tree.query("rajiv", 3)
 print time.time()
@@ -50,7 +48,8 @@ print time.time()
 
 
 def divide(p,candidates123):
-    candidates123[p[0] - 1] += [p[1]]
+    if (p[1].isalpha()):
+        candidates123[p[0] - 1] += [p[1]]
     return 1
 
 #spellcheck.writecharXYcharsX()
@@ -62,7 +61,7 @@ def divide(p,candidates123):
 spellcheck.readcharsXYcharsX()
 tree=pickle.load(open("BKtree.p", "rb" ))
 start = time.time()
-word = "thruout"
+word = "failr"
 candidates = tree.query(word, 3)
 candidates123 = [[],[],[]]
 map(lambda p: divide(p, candidates123), candidates)
@@ -72,14 +71,41 @@ print candidates123[0]
 print candidates123[1]
 print candidates123[2]
 
-words_scores1 = map(lambda  p : (spellcheck.score(spellcheck.tranformation(word,p),p) , p ) ,candidates123[0])
-words_scores2 = map(lambda  p : (spellcheck.score(spellcheck.tranformation(word,p),p) , p ) ,candidates123[1])
-words_scores3 = map(lambda  p : (spellcheck.score(spellcheck.tranformation(word,p),p) , p ) ,candidates123[2])
+words_scores1 = map(lambda  p : (spellcheck.score(spellcheck.tranformation(word,p),p)[0],spellcheck.score(spellcheck.tranformation(word,p),p)[1] , p ) ,candidates123[0])
+words_scores2 = map(lambda  p : (spellcheck.score(spellcheck.tranformation(word,p),p)[0] , spellcheck.score(spellcheck.tranformation(word,p),p)[1],p ) ,candidates123[1])
+words_scores3 = map(lambda  p : (spellcheck.score(spellcheck.tranformation(word,p),p)[0] ,spellcheck.score(spellcheck.tranformation(word,p),p)[1], p ) ,candidates123[2])
 
 words_scores1 = sorted(words_scores1, reverse=True)
 words_scores2 = sorted(words_scores2, reverse=True)
 words_scores3 = sorted(words_scores3, reverse=True)
 
+print words_scores1
+print words_scores2
+print words_scores3
+
+
+print spellcheck.jellyfish.metaphone(unicode(word,"utf-8"))
+print map(lambda  s : (s,spellcheck.jellyfish.metaphone(unicode(s[2],"utf-8"))),words_scores1)
+print map(lambda  s :(s,spellcheck.jellyfish.metaphone(unicode(s[2],"utf-8"))),words_scores2)
+print  map(lambda  s :(s,spellcheck.jellyfish.metaphone(unicode(s[2],"utf-8"))),words_scores3)
+
+print spellcheck.jellyfish.soundex(unicode(word,"utf-8"))
+print map(lambda  s : (s,spellcheck.jellyfish.soundex(unicode(s[2],"utf-8"))),words_scores1)
+print map(lambda  s :(s,spellcheck.jellyfish.soundex(unicode(s[2],"utf-8"))),words_scores2)
+print map(lambda  s :(s,spellcheck.jellyfish.soundex(unicode(s[2],"utf-8"))),words_scores3)
+
+
+print spellcheck.jellyfish.match_rating_codex(unicode(word,"utf-8"))
+print map(lambda  s : (s,spellcheck.jellyfish.match_rating_codex(unicode(s[2],"utf-8"))),words_scores1)
+print map(lambda  s :(s,spellcheck.jellyfish.match_rating_codex(unicode(s[2],"utf-8"))),words_scores2)
+print map(lambda  s :(s,spellcheck.jellyfish.match_rating_codex(unicode(s[2],"utf-8"))),words_scores3)
+
+
+print spellcheck.jellyfish.nysiis(unicode(word,"utf-8"))
+print map(lambda  s : (s,spellcheck.jellyfish.nysiis(unicode(s[2],"utf-8"))),words_scores1)
+print map(lambda  s :(s,spellcheck.jellyfish.nysiis(unicode(s[2],"utf-8"))),words_scores2)
+print map(lambda  s :(s,spellcheck.jellyfish.nysiis(unicode(s[2],"utf-8"))),words_scores3)
+
+
 end = time.time()
 print (end-start)
-
