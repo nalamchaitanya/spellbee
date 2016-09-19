@@ -1,26 +1,25 @@
 import time
-
 from spellcheck import *
 from nltk.corpus import stopwords
 import re
+e = 2.43
 
 stwords = [str(x) for x in stopwords.words('english') if len(x)<=4]
-print stwords
-def get_gist(s) :
-    s1 = re.split(r'[\s\t]',s)
-    ret = []
-    for k in s1 :
-        if (k not in stwords) :
-            ret.append(k)
-    #print ret
-    return ''.join(ret)
-def filter(s) :
-    s = re.sub(r'[^\w]','',s)
-    s.replace("\t","")
-    s.replace(" ","")
-    return s ;
+
+def is_similar(ngram,phrase) :
+    for word in ngram :
+        if (word in phrase) :
+            return True
+    for word in ngram :
+        if (len(word)<3) :
+            continue
+        for pw in phrase :
+            if (word in pw) :
+                return True
+    return False
+
 def gen_trigrams(s) :
-    ret = [hash(s[i:i+3]) for i in range(len(s)-2)]
+    ret = [s[i:i+3] for i in range(len(s)-2)]
     ret.sort()
     return ret
 
@@ -30,40 +29,45 @@ def similarity(s1,s2) :
     if (len(ret1)==0 | len(ret2)==0) :
         return 0.0
     ret  = [val for val in s1 if val in s2]
-    return float(len(ret))/(len(ret1)+len(ret2))
+    weight = 2**len(ret)/float(2**len(ret1)+2**len(ret2))
+    return weight
 
-d = {}
-l = []
-st = time.time()
-phrase = 'wate fountain at paris'
-spl = phrase.split(" ")
-splits2 = [k for k in spl if k not in stwords]
-for x in bigrams+trigrams+fourgrams+fivegrams :
-    x = str(x)
-    splits = x.split("\t")
-    freq   = float(splits[0])
-    splits1 = [k for k in splits[1:] if k not in stwords]
-    isection = [k for k in splits2 if k in splits1]
+def solve(phrase) :
+    all_list = []
 
-    if (len(isection)==0) :
-        continue
-    actual = ""
-    for k in splits[1:] :
-        actual += k+"\t"
-    actual = get_gist(actual)
-    phrase = get_gist(phrase)
-    #print actual,phrase
-    weight = similarity(filter(actual),filter(phrase))
-    l.append((weight,str(x)))
-en = time.time()
+    splits1 = phrase.split(' ')
+    splits1 = [k for k in splits1 if len(k)!=0 if k not in stwords]
+    joinedphrase = ''.join(splits1)
+    st = time.time()
 
-l.sort()
-l.reverse()
-for k in l:
-    print k
-print (en-st)
-'''
-weight = similarity(filter('hewasparticularlyinterested'),filter('interestedparticlarly'))
-print weight
-print get_gist('he	was	particularly	interested')
-'''
+    ret = []
+    lis = trigrams+fourgrams
+    lis_ns = trigrams_ns+fourgrams_ns
+
+
+    for i in range(len(lis_ns)) :
+        splits2 = lis_ns[i].split('\t')
+        val = float(splits2[0])
+        splits2 = splits2[1:]
+        if (is_similar(splits2,splits1)==False) :
+            continue
+        #print splits1,splits2
+        joinedngram = ''.join(splits2)
+        weight = similarity(joinedphrase,joinedngram)
+        ret.append((weight,lis[i]))
+
+    ret.sort()
+    ret.reverse()
+    print ret[:10]
+    en = time.time()
+
+    print en-st
+
+str = ""
+print "enter in"
+while(True) :
+    str = raw_input()
+    if (str=='end') :
+        break
+    solve(str)
+exit(0)
