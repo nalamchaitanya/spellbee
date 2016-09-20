@@ -11,7 +11,7 @@ from bigrams_counts import *
 #from wordcheck import *
 from scoring import *
 from nltk.corpus import stopwords
-stwords = [str(x) for x in stopwords.words('english') if len(x)<=4]
+stwords = [str(x) for x in stopwords.words('english') if len(x)<4]
 print stwords
 def file_as_list(f) :
     x = f.readline()

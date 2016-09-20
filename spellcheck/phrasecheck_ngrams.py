@@ -5,7 +5,7 @@ import string
 import re
 e = 2.43
 
-stwords = [str(x) for x in stopwords.words('english') if len(x)<=4]
+stwords = [str(x) for x in stopwords.words('english') if len(x)<4]
 
 def is_similar(ngram,phrase) :
     for word in ngram :
