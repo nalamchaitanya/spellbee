@@ -35,7 +35,7 @@ def similarity(s1,s2) :
     l1 = len(ret1)
     l2 = len(ret2)
     #print ret1,ret2,ret
-    weight = float(5**l)/((float(5**abs(l2-l)))+float(5**abs(l1-l)))
+    weight = float(5**l)/((float(5**abs(l2-l)))+float(3**abs(l1-l)))
     return weight
 
 def solve(phrase) :
