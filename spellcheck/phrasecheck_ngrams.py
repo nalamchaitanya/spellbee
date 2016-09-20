@@ -1,6 +1,7 @@
 import time
 from spellcheck import *
 from nltk.corpus import stopwords
+import string
 import re
 e = 2.43
 
@@ -10,12 +11,12 @@ def is_similar(ngram,phrase) :
     for word in ngram :
         if (word in phrase) :
             return True
-    for word in ngram :
-        if (len(word)<3) :
-            continue
-        for pw in phrase :
-            if (word in pw) :
-                return True
+    #for word in ngram :
+    #    if (len(word)<3) :
+    #        continue
+    #    for pw in phrase :
+    #       if ((word in pw)) :
+    #            return True
     return False
 
 def gen_trigrams(s) :
@@ -28,8 +29,12 @@ def similarity(s1,s2) :
     ret2 = gen_trigrams(s2)
     if (len(ret1)==0 | len(ret2)==0) :
         return 0.0
-    ret  = [val for val in s1 if val in s2]
-    weight = 2**len(ret)/float(2**len(ret1)+2**len(ret2))
+    ret  = [val for val in ret1 if val in ret2]
+    l = len(ret)
+    l1 = len(ret1)
+    l2 = len(ret2)
+    #print ret1,ret2,ret
+    weight = float(5**l)/(float(3**(l1-l) * 3**(l2-l)))
     return weight
 
 def solve(phrase) :
@@ -38,30 +43,37 @@ def solve(phrase) :
     splits1 = phrase.split(' ')
     splits1 = [k for k in splits1 if len(k)!=0 if k not in stwords]
     joinedphrase = ''.join(splits1)
-    st = time.time()
 
     ret = []
-    lis = trigrams+fourgrams
-    lis_ns = trigrams_ns+fourgrams_ns
+    lis = bigrams+trigrams+fourgrams
+    lis_ns = bigrams_ns+trigrams_ns+fourgrams_ns
 
+    st = time.time()
+    print joinedphrase
+
+    ff = open("results",'w')
 
     for i in range(len(lis_ns)) :
         splits2 = lis_ns[i].split('\t')
+
         val = float(splits2[0])
         splits2 = splits2[1:]
         if (is_similar(splits2,splits1)==False) :
             continue
         #print splits1,splits2
         joinedngram = ''.join(splits2)
+
         weight = similarity(joinedphrase,joinedngram)
+        ff.write(" "+joinedphrase+' '+joinedngram+'\n')
         ret.append((weight,lis[i]))
 
     ret.sort()
     ret.reverse()
-    print ret[:10]
+    print ret[:20]
     en = time.time()
+    print en - st
+    f.close()
 
-    print en-st
 
 str = ""
 print "enter in"
@@ -70,4 +82,5 @@ while(True) :
     if (str=='end') :
         break
     solve(str)
+#print similarity('roofhouse','roffhouse')
 exit(0)
