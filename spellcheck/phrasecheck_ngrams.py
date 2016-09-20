@@ -7,6 +7,7 @@ e = 2.43
 
 stwords = [str(x) for x in stopwords.words('english') if len(x)<4]
 
+
 def is_similar(ngram,phrase) :
     for word in ngram :
         if (word in phrase) :
@@ -34,7 +35,7 @@ def similarity(s1,s2) :
     l1 = len(ret1)
     l2 = len(ret2)
     #print ret1,ret2,ret
-    weight = float(5**l)/(float(3**(l1-l) * 3**(l2-l)))
+    weight = float(5**l)/((float(5**abs(l2-l)))+float(5**abs(l1-l)))
     return weight
 
 def solve(phrase) :
@@ -64,23 +65,21 @@ def solve(phrase) :
         joinedngram = ''.join(splits2)
 
         weight = similarity(joinedphrase,joinedngram)
+        joinedngram += str(weight)
         ff.write(" "+joinedphrase+' '+joinedngram+'\n')
-        ret.append((weight,lis[i]))
+        ret.append((weight,val,lis[i]))
 
     ret.sort()
     ret.reverse()
-    print ret[:20]
-    en = time.time()
-    print en - st
-    f.close()
+    print ret
 
 
-str = ""
+s= ""
 print "enter in"
 while(True) :
-    str = raw_input()
-    if (str=='end') :
+    s = raw_input()
+    if (s=='end') :
         break
-    solve(str)
+    solve(s)
 #print similarity('roofhouse','roffhouse')
 exit(0)

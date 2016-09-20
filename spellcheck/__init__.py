@@ -2,15 +2,16 @@ import os
 import jellyfish
 #from confusion import *
 from bigrams_counts import *
-
-
-PROJECT_DIR=os.pardir
-DATA=PROJECT_DIR+"/data"
-from confusion import *
+#from confusion import *
 from bigrams_counts import *
 #from wordcheck import *
 from scoring import *
 from nltk.corpus import stopwords
+
+
+PROJECT_DIR=os.pardir
+DATA=PROJECT_DIR+"/data"
+
 stwords = [str(x) for x in stopwords.words('english') if len(x)<4]
 print stwords
 def file_as_list(f) :
