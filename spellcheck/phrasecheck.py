@@ -1,4 +1,3 @@
-import nltk
 from nltk.corpus import wordnet as wn
 import spellcheck
 import operator
@@ -115,8 +114,6 @@ print d
 phrase = "I do sometimes need just a moment of rest and piece"
 word  = get_ambiguous_word_using_wordnet(phrase)
 print word
-
-
 
 
 

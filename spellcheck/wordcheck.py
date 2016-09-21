@@ -36,13 +36,9 @@ def split1(word,l) :
         l.remove(l[-1])
 
 
+<<<<<<< HEAD
 split1('halloffame',[])
 print list
-'''
-
-'''
-tree = BKTree(levenshtein,dict_words(spellcheck.DATA+'/dict.txt'))
-
 '''
 
 
