@@ -4,13 +4,13 @@ import operator
 confSet = {"desert":["desert","dessert"],"dessert":["desert","dessert"]}
 (posDict,colocDict) = colocGen("w3ctest.txt")
 
-def giveConfusionSet(words):
+def giveConfusionWord(words):
     index = len(words)-1
     return index
 
 def giveSuggestion(sentence):
     words = sentence.split(" ")
-    ind = giveConfusionSet(words)
+    ind = giveConfusionWord(words)
     confs = confSet[words[ind]]
     scoreConfs = {}
     scoreMax = 0
