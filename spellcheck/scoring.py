@@ -1,9 +1,9 @@
 import spellcheck
-
+import math
 def score(multi_edits,word):
     total_pblty =0
-    print word
-    print multi_edits
+#    print word
+#    print multi_edits
     for edits in multi_edits:
         res = 1
         for edit in edits:
@@ -14,7 +14,7 @@ def score(multi_edits,word):
             elif edit[0] == "add":
                 res *= float(spellcheck.addMat(edit[1][0], edit[1][1])) / float(spellcheck.charCount(edit[1][0]))
             elif edit[0] == "rev":
-                res *= float(spellcheck.revMat(edit[1][0], edit[1][1])) / float(spellcheck.charsCooc(edit[1][0], edit[1][1]))
+                res *= float(spellcheck.revMat(edit[1][0], edit[1][1])) / float(spellcheck.charsCooce(edit[1][0], edit[1][1]))
         total_pblty += res
     if( word.lower() not in spellcheck.wordfrqs.keys()):
         return (-1,-1) ;
@@ -81,4 +81,54 @@ def get_transformations(i,j,T,C,dist_matrix):
             list4 = map(lambda p: [('del', (C[j-1], C[j]))] + p, list4)
             list += list4
     return list
+#ggh
+def merge_wordscores(words_scores1,words_scores2,words_scores3,word):
+    first_three = words_scores1[:1]+words_scores2[:1]+words_scores3[:1]
+    if(len(words_scores1) !=0):
+        words_scores1.remove(words_scores1[0])
+    if (len(words_scores2) != 0):
+        words_scores2.remove(words_scores2[0])
+    if (len(words_scores3) != 0):
+        words_scores3.remove(words_scores3[0])
+    for i  in first_three:
+        for j in first_three:
+            if((j[0] < i[0]) and (i[0]/j[0]) > math.exp(3)):
+                first_three.remove(j)
+                words_scores2 += [j]
+    firsts = sorted(first_three,reverse = True , key=lambda x: x[1])
+
+    all_list =  words_scores1[:10] + words_scores2[:10] + words_scores3[:10]
+    final_list = firsts + sorted(all_list,reverse = True , key=lambda x: x[0])[0:7]
+    return final_list[0:11]
+
+def phonetic_distance(word1,word2):
+    phonetic1 =(spellcheck.jellyfish.metaphone(unicode(word1, "utf-8")))
+    phonetic2 =(spellcheck.jellyfish.metaphone(unicode(word2, "utf-8")))
+    return edit_distance(phonetic1,phonetic2)
+
+def edit_distance(T,C):
+    N = len(T)
+    M = len(C)
+    T = '{' + T
+    C = '{' + C
+    dist_matrix = [[0] * (M + 1) for i in range(N + 1)]
+    for i in range(N + 1):
+        dist_matrix[i][0] = i
+    for j in range(M + 1):
+        dist_matrix[0][j] = j
+    for i in range(1, N + 1):
+        for j in range(1, M + 1):
+            l = 0 if (T[i] == C[j]) else 1
+            dist_matrix[i][j] = min((dist_matrix[i - 1][j] + 1), (dist_matrix[i][j - 1] + 1),
+                                    (dist_matrix[i - 1][j - 1] + l))
+    return dist_matrix[N][M]
+
+def prune_candidates(candidates,word):
+    s = []
+    for i in range(len(candidates)):
+        if (phonetic_distance(word,candidates[i]) <= 2):
+            s += [candidates[i]]
+    return s
+
+
 

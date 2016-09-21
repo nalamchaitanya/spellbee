@@ -7,7 +7,7 @@ from spellcheck.bktree import *
 
 #spellcheck.writecharXYcharsX()
 words = set([line.strip() for line in open(spellcheck.DATA+"/dict.txt",'r')])
-
+'''
 def firstPrefix(word) :
     prefix = ''
     ret = []
@@ -36,16 +36,9 @@ def split1(word,l) :
         l.remove(l[-1])
 
 
+<<<<<<< HEAD
 split1('halloffame',[])
 print list
-
-
-'''
-tree = BKTree(levenshtein,dict_words(spellcheck.DATA+'/dict.txt'))
-
-print time.time()
-print tree.query("rajiv", 3)
-print time.time()
 '''
 
 
@@ -61,35 +54,43 @@ def divide(p,candidates123):
 #pickle.dump(tree, open( "BKtree.p", "wb" ) )
 
 spellcheck.readcharsXYcharsX()
-tree=pickle.load(open("BKtree.p", "rb" ))
+tree=pickle.load(open("BKtree.pkl", "rb" ))
 start = time.time()
-word = "miscevous"
+word = "stupd"
+
 candidates = tree.query(word, 3)
 candidates123 = [[],[],[]]
 map(lambda p: divide(p, candidates123), candidates)
 
 
-print candidates123[0]
-print candidates123[1]
-print candidates123[2]
+#print candidates123[0]
+#print candidates123[1]
+#print candidates123[2]
 
-words_scores1 = map(lambda  p : (spellcheck.score(spellcheck.tranformation(word,p),p)[0],spellcheck.score(spellcheck.tranformation(word,p),p)[1] , p ) ,candidates123[0])
-words_scores2 = map(lambda  p : (spellcheck.score(spellcheck.tranformation(word,p),p)[0] , spellcheck.score(spellcheck.tranformation(word,p),p)[1],p ) ,candidates123[1])
-words_scores3 = map(lambda  p : (spellcheck.score(spellcheck.tranformation(word,p),p)[0] ,spellcheck.score(spellcheck.tranformation(word,p),p)[1], p ) ,candidates123[2])
+candidates123[0] = spellcheck.prune_candidates(candidates123[0],word)
+candidates123[1] = spellcheck.prune_candidates(candidates123[1],word)
+candidates123[2] = spellcheck.prune_candidates(candidates123[2],word)
 
-words_scores1 = sorted(words_scores1, reverse=True)
-words_scores2 = sorted(words_scores2, reverse=True)
-words_scores3 = sorted(words_scores3, reverse=True)
+words_scores1 = map(lambda  p : ( spellcheck.score(spellcheck.tranformation(word,p),p)[0],spellcheck.score(spellcheck.tranformation(word,p),p)[1] , p ) ,candidates123[0])
+words_scores2 = map(lambda  p : ( spellcheck.score(spellcheck.tranformation(word,p),p)[0] , spellcheck.score(spellcheck.tranformation(word,p),p)[1],p ) ,candidates123[1])
+words_scores3 = map(lambda  p : ( spellcheck.score(spellcheck.tranformation(word,p),p)[0] ,spellcheck.score(spellcheck.tranformation(word,p),p)[1], p ) ,candidates123[2])
 
-print words_scores1
-print words_scores2
-print words_scores3
+words_scores1 = sorted(words_scores1, reverse=True ,  key=lambda x: x[0])
+words_scores2 = sorted(words_scores2, reverse=True ,  key=lambda x: x[0])
+words_scores3 = sorted(words_scores3, reverse=True ,  key=lambda x: x[0])
 
 
+
+final_word_list = spellcheck.merge_wordscores(words_scores1,words_scores2,words_scores3,word);
+
+print final_word_list
+#ggh
+'''
 print spellcheck.jellyfish.metaphone(unicode(word,"utf-8"))
 print map(lambda  s : (s,spellcheck.jellyfish.metaphone(unicode(s[2],"utf-8"))),words_scores1)
 print map(lambda  s :(s,spellcheck.jellyfish.metaphone(unicode(s[2],"utf-8"))),words_scores2)
 print  map(lambda  s :(s,spellcheck.jellyfish.metaphone(unicode(s[2],"utf-8"))),words_scores3)
+
 
 print spellcheck.jellyfish.soundex(unicode(word,"utf-8"))
 print map(lambda  s : (s,spellcheck.jellyfish.soundex(unicode(s[2],"utf-8"))),words_scores1)
@@ -107,7 +108,7 @@ print spellcheck.jellyfish.nysiis(unicode(word,"utf-8"))
 print map(lambda  s : (s,spellcheck.jellyfish.nysiis(unicode(s[2],"utf-8"))),words_scores1)
 print map(lambda  s :(s,spellcheck.jellyfish.nysiis(unicode(s[2],"utf-8"))),words_scores2)
 print map(lambda  s :(s,spellcheck.jellyfish.nysiis(unicode(s[2],"utf-8"))),words_scores3)
-
+'''
 
 end = time.time()
 print (end-start)
