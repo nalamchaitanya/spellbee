@@ -43,6 +43,10 @@ class BKTree:
 
 
 def brute_query(word, words, distfn, n):
+<<<<<<< HEAD
+
+=======
+>>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
     return [i for i in words
         if distfn(i, word) <= n]
 
@@ -72,7 +76,6 @@ def levenshtein(s, t):
 
 
 def dict_words(dictfile=spellcheck.DATA+'/dict.txt'):
-    "Return an iterator that produces words in the given dictionary."
     return ifilter(len,
                    imap(str.strip,
                         open(dictfile)))
