@@ -63,7 +63,7 @@ def divide(p,candidates123):
 spellcheck.readcharsXYcharsX()
 tree=pickle.load(open("BKtree.p", "rb" ))
 start = time.time()
-word = "failr"
+word = "miscevous"
 candidates = tree.query(word, 3)
 candidates123 = [[],[],[]]
 map(lambda p: divide(p, candidates123), candidates)
