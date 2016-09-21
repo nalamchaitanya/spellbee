@@ -81,7 +81,7 @@ def get_transformations(i,j,T,C,dist_matrix):
             list4 = map(lambda p: [('del', (C[j-1], C[j]))] + p, list4)
             list += list4
     return list
-
+#ggh
 def merge_wordscores(words_scores1,words_scores2,words_scores3,word):
     first_three = words_scores1[:1]+words_scores2[:1]+words_scores3[:1]
     #first_three = sorted(first_three, reverse=True, key=lambda x: x[1]);

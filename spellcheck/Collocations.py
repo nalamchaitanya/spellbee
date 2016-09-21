@@ -32,7 +32,7 @@ def get_possible_tags(tag_list , index, length):
     for tag in tag_list[index]:
         possible_tags += map(lambda p : ([tag[0]] + p[0] , tag[1]*p[1] ),next_tags)
     return possible_tags
-
+#ggh
 def Features_extraction_selection(confusion_set):
     features = {}
     for word in confusion_set:

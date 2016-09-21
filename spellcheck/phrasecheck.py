@@ -110,7 +110,7 @@ d = correct_phrase("peace of cake")
 print "\n\n\n\nThe final probabilities are : "
 print d
 
-
+#ggh
 phrase = "Travelers entering from the dessert were confounded"
 word  = get_ambiguous_word_using_wordnet(phrase)
 print word

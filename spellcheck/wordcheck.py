@@ -88,7 +88,7 @@ words_scores3 = sorted(words_scores3, reverse=True ,  key=lambda x: x[0])
 final_word_list = spellcheck.merge_wordscores(words_scores1,words_scores2,words_scores3,word);
 
 print final_word_list
-
+#ggh
 '''
 print spellcheck.jellyfish.metaphone(unicode(word,"utf-8"))
 print map(lambda  s : (s,spellcheck.jellyfish.metaphone(unicode(s[2],"utf-8"))),words_scores1)
