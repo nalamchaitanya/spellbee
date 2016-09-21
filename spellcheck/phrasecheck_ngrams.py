@@ -3,6 +3,7 @@ from spellcheck import *
 from nltk.corpus import stopwords
 import string
 import re
+import  copy
 e = 2.43
 
 def levenshtein(s, t):
@@ -63,16 +64,21 @@ def spell_correct(phraselist,matches) :
     for i in range(len(phraselist)) :
         if (phraselist[i] not in words):
             wrongword = phraselist[i]
-            for match in matches:
-                s = match[1]
-                s.replace('\t',' ')
+            print wrongword
+            for match in matches :
+                s = copy.copy(match[1])
 
-                match[1].replace('\t', '')
-                if (wrongword in match[1]):
-                    phraselist[i] = s
-                    print s +"   @@"
+                splitt = match[1].split('\t')
+                matching = ''.join(splitt[1:])
+                print wrongword,match[1]
+                if (wrongword in matching) :
+                    sp = s.split('\t')
+                    correct = ' '.join(sp[1:])
+                    phraselist[i] = correct
                     suggestions.append(phraselist)
                     return suggestions
+
+
     candidates = []
     index = 0
     for i in range(len(phraselist)):
