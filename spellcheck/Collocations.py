@@ -1,7 +1,8 @@
 import spellcheck
-
-Word_tags = {'peace' : [('nn1',0.8) , ('npl',0.2) ], 'piece' : [('nn1',0.5) , ('npl',0.5) ] }
-Word_collocs = {}
+import pickle
+import operator
+Word_tags =pickle.load(open('POSdict.pkl', 'rb'))
+Word_collocs = pickle.load(open('Colocdict.pkl', 'rb'))
 
 def All_POS_taggs(sentence,errword):
     #nltk_tag= spellcheck.nltk.pos_tag(sentence)
@@ -10,17 +11,20 @@ def All_POS_taggs(sentence,errword):
     tag_sequences = []
     i = words.index(errword)
     start = max(0,i-2)
-    end = min(i+2,len(words))
-    tag_list = map(lambda p : word_tags(Word_tags[p])  , words[start:(end)])
+    end = min(i+3,len(words))
+    tag_list = map(lambda p : word_tags(giveMax(Word_tags[p],2))  , words[start:(end)])
     print tag_list
     for i in range(start,max(1,end-2)):
         tag_sequences += get_possible_tags(tag_list , (i-start) ,min(3,len(tag_list)))
     return tag_sequences
 
-def word_tags(list):
-    if (list[0][1] > 0.6):
-        return [list[0]]
-    return [list[0], list[1]]
+def word_tags(list0):
+    totalfreq = sum([i[1] for i in list0])
+    list0 = map( lambda p : (p[0],(float(p[1])/float(totalfreq))) ,list0 )
+    print list0
+    if (list0[0][1] > 0.6):
+        return [list0[0]]
+    return [list0[0], list0[1]]
 
 def get_possible_tags(tag_list , index, length):
     if(length == 0):
@@ -49,7 +53,7 @@ def Features_extraction_selection(confusion_set):
         Mi += sum(Word_tags[word].values())  # total frequency of word i
 
     colloc_frequency = []
-    threshold =10
+    threshold = 10
     for colloc in all_collocs:
         if(sum(colloc.values()) < threshold ):
             del features[colloc]
@@ -69,9 +73,17 @@ def Features_extraction_selection(confusion_set):
     return (features , colloc_strength)
 
 
-sentence='peace piece'
-print All_POS_taggs(sentence,'piece')
-
+def giveMax(diction,n):
+    return sorted(diction.items(),key=operator.itemgetter(1),reverse=True)[:n]
+'''
+sentence='peace of cake'
+print Word_tags['peace']
+print Word_tags['of']
+print Word_tags['cake']
+print Word_collocs['peace']
+print Word_collocs['piece']
+print All_POS_taggs(sentence,'peace')
+'''
 
 
 
