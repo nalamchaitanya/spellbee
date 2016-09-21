@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< HEAD
+    <list default="true" id="e3154ff7-5c30-4079-aa66-aca7663875fb" name="Default" comment="" />
+=======
+<<<<<<< HEAD
     <list default="true" id="0ab853e8-0c88-4094-a42f-bb8c7f2786c0" name="Default" comment="small changes in colocGen.py now collocations are generated.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/spellbee.iml" afterPath="$PROJECT_DIR$/.idea/spellbee.iml" />
@@ -17,6 +20,7 @@
 >>>>>>> c66612101c7e69450183b4606b5fb924ac183341
     </list>
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
     <ignored path="spellbee.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,20 +39,49 @@
   </component>
   <component name="FileEditorManager">
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
 =======
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="colocGen.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spellcheck/colocGen.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="629">
+              <caret line="37" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wordcheck.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spellcheck/wordcheck.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="952">
+              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+=======
             <state relative-caret-position="510">
               <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+<<<<<<< HEAD
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Nalam V S S Krishna Chaitanya &lt;cs13b021@smail.iitm.ac.in&gt;" />
+      </list>
+    </option>
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+=======
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
   </component>
   <component name="FileTemplateManagerImpl">
@@ -70,17 +103,32 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="FORCE_PUSH_ALLOWED" value="true" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
     <option name="PUSH_TAGS">
       <GitPushTagMode>
         <option name="argument" value="--follow-tags" />
         <option name="title" value="Current Branch" />
       </GitPushTagMode>
     </option>
+<<<<<<< HEAD
+=======
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/spellcheck/sample.py" />
+        <option value="$PROJECT_DIR$/spellcheck/confusion.py" />
+        <option value="$PROJECT_DIR$/spellcheck/bigrams_counts.py" />
+        <option value="$PROJECT_DIR$/spellcheck/scoring.py" />
+        <option value="$PROJECT_DIR$/spellcheck/__init__.py" />
+        <option value="$PROJECT_DIR$/data/coca_pos.txt" />
+        <option value="$PROJECT_DIR$/spellcheck/colocGen.py" />
+        <option value="$PROJECT_DIR$/spellcheck/matchCollocs.py" />
+        <option value="$PROJECT_DIR$/spellcheck/wordcheck.py" />
+=======
 <<<<<<< HEAD
         <option value="$PROJECT_DIR$/spellcheck/dump" />
         <option value="$PROJECT_DIR$/spellcheck/confusion.py" />
@@ -117,10 +165,17 @@
 =======
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
 >>>>>>> c66612101c7e69450183b4606b5fb924ac183341
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
+=======
 <<<<<<< HEAD
     <option name="x" value="-8" />
     <option name="y" value="-8" />
@@ -184,6 +239,7 @@
       </profile-state>
     </entry>
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -193,10 +249,14 @@
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
 <<<<<<< HEAD
+    <ConfirmationsSetting value="1" id="Add" />
+=======
+<<<<<<< HEAD
     <ConfirmationsSetting value="0" id="Add" />
 =======
     <ConfirmationsSetting value="2" id="Add" />
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -214,7 +274,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+      <pane id="Scope" />
+=======
       <pane id="Scratches" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -225,6 +289,9 @@
           </PATH>
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="spellbee" />
@@ -253,13 +320,29 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+=======
+<<<<<<< HEAD
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+<<<<<<< HEAD
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.matchCollocs">
+    <configuration default="false" name="wordcheck" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
   </component>
   <component name="RunManager" selected="Python.DistSim">
@@ -366,6 +449,7 @@
 =======
     <configuration default="false" name="wordcheck" type="PythonConfigurationType" factoryName="Python" temporary="true">
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -377,20 +461,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="spellbee" />
+<<<<<<< HEAD
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spellcheck/wordcheck.py" />
+=======
 <<<<<<< HEAD
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spellcheck/Collocations.py" />
 =======
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spellcheck/phrasecheck_ngrams.py" />
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
 <<<<<<< HEAD
+    <configuration default="false" name="colocGen" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+<<<<<<< HEAD
     <configuration default="false" name="phrasecheck" type="PythonConfigurationType" factoryName="Python" temporary="true">
 =======
     <configuration default="false" name="bktree" type="PythonConfigurationType" factoryName="Python" temporary="true">
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -400,12 +492,19 @@
 <<<<<<< HEAD
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/spellcheck" />
 =======
+<<<<<<< HEAD
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/spellcheck" />
+=======
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/spellcheck/bktree" />
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="spellbee" />
+<<<<<<< HEAD
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spellcheck/colocGen.py" />
+=======
 <<<<<<< HEAD
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spellcheck/phrasecheck.py" />
 =======
@@ -436,11 +535,16 @@
 =======
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spellcheck/phrasecheck.py" />
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
+<<<<<<< HEAD
+    <configuration default="false" name="matchCollocs" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
     <configuration default="false" name="colocGen" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -452,7 +556,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="spellbee" />
+<<<<<<< HEAD
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spellcheck/matchCollocs.py" />
+=======
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spellcheck/colocGen.py" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -592,6 +700,18 @@
       <method />
     </configuration>
 <<<<<<< HEAD
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Python.wordcheck" />
+      <item index="1" class="java.lang.String" itemvalue="Python.colocGen" />
+      <item index="2" class="java.lang.String" itemvalue="Python.matchCollocs" />
+    </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.matchCollocs" />
+        <item index="1" class="java.lang.String" itemvalue="Python.colocGen" />
+        <item index="2" class="java.lang.String" itemvalue="Python.wordcheck" />
+=======
+<<<<<<< HEAD
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.wordcheck" />
       <item index="1" class="java.lang.String" itemvalue="Python.bigrams_counts" />
@@ -667,6 +787,7 @@
         <item index="3" class="java.lang.String" itemvalue="Python.bktree" />
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
 >>>>>>> c66612101c7e69450183b4606b5fb924ac183341
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       </list>
     </recent_temporary>
   </component>
@@ -675,6 +796,81 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="e3154ff7-5c30-4079-aa66-aca7663875fb" name="Default" comment="" />
+      <created>1473491421437</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1473491421437</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Adding the confusion matrix files.">
+      <created>1473492842909</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1473492842909</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added the functions to access confusion matrix files.">
+      <created>1473509027090</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1473509027090</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added the functions to access confusion matrix files.">
+      <created>1473572185193</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1473572185193</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Access functions to char count and cooc count and function for scoring">
+      <created>1473692998254</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1473692998254</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Collocations generation is done.">
+      <created>1474089897851</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1474089897851</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Scoring of confusion words is done using collocations.">
+      <created>1474465092796</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1474465092796</updated>
+    </task>
+    <task id="LOCAL-00007" summary="matchCollocs is pushed.">
+      <created>1474474370614</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1474474370614</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18887262" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43323442" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32763976" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32789317" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39906833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+=======
 <<<<<<< HEAD
       <changelist id="ab9c5aa0-7b79-4846-8ed0-c4ea2e4fd4cd" name="Default" comment="" />
       <created>1473687774101</created>
@@ -783,11 +979,35 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34055728" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+<<<<<<< HEAD
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+=======
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -991,6 +1211,7 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.md" />
   </component>
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
@@ -1003,6 +1224,26 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+<<<<<<< HEAD
+    <MESSAGE value="Adding the confusion matrix files." />
+    <MESSAGE value="Added the functions to access confusion matrix files." />
+    <MESSAGE value="Access functions to char count and cooc count and function for scoring" />
+    <MESSAGE value="Collocations generation is done." />
+    <MESSAGE value="Scoring of confusion words is done using collocations." />
+    <MESSAGE value="matchCollocs is pushed." />
+    <option name="LAST_COMMIT_MESSAGE" value="matchCollocs is pushed." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="7" />
+=======
 <<<<<<< HEAD
     <MESSAGE value="Added  transformations" />
     <MESSAGE value="Added  transformations code" />
@@ -1043,10 +1284,19 @@
       </breakpoints>
       <option name="time" value="4" />
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/spellcheck/confusion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+=======
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -1056,10 +1306,19 @@
           <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/spellcheck/wordcheck.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#17#0" expanded="false" />
+=======
     <entry file="file://$PROJECT_DIR$/spellcheck/Collocations.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1074,18 +1333,32 @@
           <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding>
             <element signature="e#0#9#0" expanded="false" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/data/coca_pos.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+=======
     <entry file="file://$PROJECT_DIR$/data/ambiguos-words">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/spellcheck/colocGen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/spellcheck/bigrams_counts.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1100,6 +1373,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           <folding />
         </state>
       </provider>
@@ -1107,6 +1381,11 @@
     <entry file="file://$PROJECT_DIR$/spellcheck/confusion.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
+<<<<<<< HEAD
+          <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+=======
           <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
         </state>
       </provider>
@@ -1117,20 +1396,39 @@
           <caret line="76" column="10" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spellcheck/wordcheck.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="60">
+          <caret line="8" column="74" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#17#0" expanded="false" />
+=======
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/data/coca_pos.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spellcheck/colocGen.py">
+=======
     <entry file="file://$PROJECT_DIR$/spellcheck/sample.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1142,6 +1440,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/ambiguos-words">
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1149,6 +1448,14 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/spellcheck/confusion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+=======
     <entry file="file://$PROJECT_DIR$/spellcheck/bigrams_counts.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1425">
@@ -1180,20 +1487,39 @@
           <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spellcheck/wordcheck.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="60">
+          <caret line="8" column="74" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#17#0" expanded="false" />
+=======
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/data/coca_pos.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spellcheck/colocGen.py">
+=======
     <entry file="file://$PROJECT_DIR$/spellcheck/sample.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1205,6 +1531,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/ambiguos-words">
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1212,26 +1539,48 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/spellcheck/wordcheck.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#17#0" expanded="false" />
+=======
     <entry file="file://$PROJECT_DIR$/spellcheck/bigrams_counts.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1425">
           <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/spellcheck/bigrams_counts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+=======
     <entry file="file://$PROJECT_DIR$/spellcheck/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spellcheck/confusion.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="645">
+          <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+=======
         <state relative-caret-position="765">
           <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
         </state>
@@ -1243,10 +1592,17 @@
           <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/spellcheck/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/spellcheck/wordcheck.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1279,41 +1635,140 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spellcheck/scoring.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="45">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+=======
         <state relative-caret-position="330">
           <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spellcheck/wordcheck.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#17#0" expanded="false" />
+=======
         <state relative-caret-position="330">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/spellcheck/confusion.py">
+=======
     <entry file="file://$PROJECT_DIR$/spellcheck/scoring.py">
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
+            <element signature="e#0#10#0" expanded="false" />
+=======
             <element signature="e#0#17#0" expanded="true" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spellcheck/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="60">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spellcheck/wordcheck.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#17#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spellcheck/confusion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spellcheck/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/del.txt" />
+    <entry file="file://$PROJECT_DIR$/data/words.tsv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spellcheck/sample.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/norvig.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="26631" column="18" selection-start-line="26631" selection-start-column="18" selection-end-line="26631" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_bundle/pydev_monkey_qt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spellcheck/bigrams_counts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spellcheck/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jellyfish/__init__.py">
+=======
         <state relative-caret-position="30">
           <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
           <folding />
@@ -1399,12 +1854,30 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/add.csv">
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/TrainData/phrases.tsv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spellcheck/bktree/bktree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jellyfish/_jellyfish.py">
+=======
     <entry file="file://$PROJECT_DIR$/data/rev.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1420,26 +1893,54 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/spellbee.iml">
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/jellyfish/compat.py">
+=======
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/jellyfish/porter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2985">
+=======
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/jellyfish/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spellcheck/scoring.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-315">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/wordfrequencies_scaled.csv">
+=======
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -1476,12 +1977,26 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/sentences.tsv">
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/spellcheck/confusion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/w3c.txt">
+=======
     <entry file="file://$PROJECT_DIR$/spellcheck/bktree/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1492,10 +2007,27 @@
     <entry file="file://$PROJECT_DIR$/ambiguos-words" />
     <entry file="file:///usr/local/lib/python2.7/dist-packages/nltk/corpus/reader/wordnet.py" />
     <entry file="file://$PROJECT_DIR$/data/w5_.txt">
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state />
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/data/w3ctest.txt">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="150000">
+          <caret line="10000" column="0" selection-start-line="10000" selection-start-column="0" selection-end-line="10000" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/coca_pos.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+=======
     <entry file="file://$PROJECT_DIR$/data/dict.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="631296">
@@ -1615,10 +2147,18 @@
           <caret line="70" column="18" selection-start-line="57" selection-start-column="0" selection-end-line="70" selection-end-column="18" />
 <<<<<<< HEAD
 =======
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/spellcheck/matchCollocs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="52" column="58" selection-start-line="52" selection-start-column="58" selection-end-line="52" selection-end-column="58" />
+          <folding />
+=======
     <entry file="file://$PROJECT_DIR$/spellcheck/confusion.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1697,11 +2237,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1314">
           <caret line="73" column="48" selection-start-line="73" selection-start-column="47" selection-end-line="73" selection-end-column="48" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spellcheck/wordcheck.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="952">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+=======
         <state relative-caret-position="-1180">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
 <<<<<<< HEAD
@@ -1878,11 +2424,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-142">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spellcheck/colocGen.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="629">
+          <caret line="37" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+=======
         <state relative-caret-position="510">
           <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
 =======
@@ -1908,6 +2459,7 @@
           <caret line="919" column="20" selection-start-line="919" selection-start-column="11" selection-end-line="919" selection-end-column="20" />
 >>>>>>> c26e863364c814cd4c5f9097fb7bd921c44407e0
 >>>>>>> c66612101c7e69450183b4606b5fb924ac183341
+>>>>>>> b79c0126e67bf91ae4daec9d87890bf830990b23
           <folding />
         </state>
       </provider>

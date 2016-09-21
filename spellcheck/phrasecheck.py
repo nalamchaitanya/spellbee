@@ -68,7 +68,7 @@ def get_ambiguous_word_using_wordnet(phrase) :
         if (len(ret)==1) :
             continue
         if (len(ret)>1) :
-            am_words += [(word,d[word])]
+            am_words += [(word,ret)]
     return am_words
 
 
@@ -104,7 +104,7 @@ def word_net_similarity(word1,word2):
             print x
             return x
     return -1
-
+'''
 d = correct_phrase("peace of cake")
 
 print "\n\n\n\nThe final probabilities are : "
@@ -114,7 +114,7 @@ print d
 phrase = "I do sometimes need just a moment of rest and piece"
 word  = get_ambiguous_word_using_wordnet(phrase)
 print word
-
+'''
 
 
 
