@@ -70,7 +70,7 @@ def spell_correct(phraselist,matches) :
                 match[1].replace('\t', '')
                 if (wrongword in match[1]):
                     phraselist[i] = s
-                    print s +" @@"
+                    print s +"   @@"
                     suggestions.append(phraselist)
                     return suggestions
     candidates = []
