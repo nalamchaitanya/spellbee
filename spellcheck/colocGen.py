@@ -1,11 +1,9 @@
-import numpy
-import spellcheck
 from collections import defaultdict
 
 def colocGen(filename):
     posDict = defaultdict(lambda:defaultdict(lambda:0))
     colocDict = defaultdict(lambda:defaultdict(lambda:0))
-    for line in open(spellcheck.DATA+"/"+filename,'r'):
+    for line in open("../data/"+filename,'r'):
         list0 = line.strip().split("\t")
         count = int(line[0])
 
@@ -14,11 +12,10 @@ def colocGen(filename):
             posDict[x][y] += count
 
         tempList = giveCollocs(list0[1:])
-        for x in tempList:
-            colocDict[list0[1]][x] += count
+        for i in range(0,3):
+            colocDict[list0[i+1]][tempList[i]] += count
 
     return (dict(posDict),dict(colocDict))
-
 
 
 def giveDict(list0):
@@ -29,10 +26,11 @@ def giveDict(list0):
 
 def giveCollocs(trigram):
     temp = []
-    temp.append((trigram[0+3], ("_", trigram[1], trigram[2])))
-    temp.append((trigram[1+3], (trigram[0], "_", trigram[2])))
-    temp.append((trigram[2+3], (trigram[0], trigram[1], "_")))
+    temp.append((trigram[0+3], ("_", trigram[1+3], trigram[2+3])))
+    temp.append((trigram[1+3], (trigram[0+3], "_", trigram[2+3])))
+    temp.append((trigram[2+3], (trigram[0+3], trigram[1+3], "_")))
     return temp
 
 (p,c) = colocGen("w3ctest.txt")
-print p,c
+print p
+print c
