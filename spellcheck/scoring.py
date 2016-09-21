@@ -1,5 +1,5 @@
 import spellcheck
-
+import math
 def score(multi_edits,word):
     total_pblty =0
 #    print word
@@ -84,11 +84,22 @@ def get_transformations(i,j,T,C,dist_matrix):
 #ggh
 def merge_wordscores(words_scores1,words_scores2,words_scores3,word):
     first_three = words_scores1[:1]+words_scores2[:1]+words_scores3[:1]
-    #first_three = sorted(first_three, reverse=True, key=lambda x: x[1]);
-    nooffirstthree = 0
-    all_list = words_scores1[0:10] + words_scores2[0:10] + words_scores3[:10]
-    final_list = sorted(all_list,reverse = True , key=lambda x: x[0])[0:7]
-    return final_list
+    if(len(words_scores1) !=0):
+        words_scores1.remove(words_scores1[0])
+    if (len(words_scores2) != 0):
+        words_scores2.remove(words_scores2[0])
+    if (len(words_scores3) != 0):
+        words_scores3.remove(words_scores3[0])
+    for i  in first_three:
+        for j in first_three:
+            if((j[0] < i[0]) and (i[0]/j[0]) > math.exp(3)):
+                first_three.remove(j)
+                words_scores2 += [j]
+    firsts = sorted(first_three,reverse = True , key=lambda x: x[1])
+
+    all_list =  words_scores1[:10] + words_scores2[:10] + words_scores3[:10]
+    final_list = firsts + sorted(all_list,reverse = True , key=lambda x: x[0])[0:7]
+    return final_list[0:11]
 
 def phonetic_distance(word1,word2):
     phonetic1 =(spellcheck.jellyfish.metaphone(unicode(word1, "utf-8")))

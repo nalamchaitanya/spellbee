@@ -56,20 +56,21 @@ def get_ambiguous_word_using_wordnet(phrase) :
             if( k != word):
                 ans = word_net_similarity(word,k)
                 if( ans != -1):
-                    sim *=ans
-        d[word] = sim
-    print d
+                    sim +=ans
+        d[word] = (float(sim)/float(len(splits)))
 
+    print d
     sorted_x = sorted(d.items(), key=operator.itemgetter(1))
     sorted_x = [i[0] for i in sorted_x]
-    am_word = []
+    print sorted_x
+    am_words = []
     for word in sorted_x :
         ret = get_confusion_set(word)
         if (len(ret)==1) :
             continue
         if (len(ret)>1) :
-            am_word += [word]
-    return am_word
+            am_words += [(word,d[word])]
+    return am_words
 
 
 def correct_phrase(phrase) :
@@ -86,8 +87,8 @@ def correct_phrase(phrase) :
         for k in splits :
             ans = word_net_similarity(word,k)
             if( ans != -1):
-                sim *=ans
-        d[word] = sim
+                sim +=ans
+        d[word] = (float(sim)/float(len(splits)))
     return d
 
 def word_net_similarity(word1,word2):
@@ -111,7 +112,7 @@ print "\n\n\n\nThe final probabilities are : "
 print d
 
 #ggh
-phrase = "Travelers entering from the dessert were confounded"
+phrase = "I do sometimes need just a moment of rest and piece"
 word  = get_ambiguous_word_using_wordnet(phrase)
 print word
 
