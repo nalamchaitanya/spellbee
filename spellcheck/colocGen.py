@@ -2,6 +2,7 @@
 # import spellcheck
 from collections import defaultdict
 
+import pickle
 def colocGen(filename):
     posDict = defaultdict(lambda:defaultdict(lambda:0))
     colocDict = defaultdict(lambda:defaultdict(lambda:0))
@@ -20,7 +21,6 @@ def colocGen(filename):
     return (dict(posDict),dict(colocDict))
 
 
-
 def giveDict(list0):
     temp = {}
     for i in range(0,3):
@@ -37,3 +37,17 @@ def giveCollocs(trigram):
 (p,c) = colocGen("w3ctest.txt")
 print p
 print c
+(p,c) = colocGen("w3c.txt")
+
+newp = {}
+for x,y in p.items():
+    newp[x] = dict(y)
+
+newc = {}
+for x,y in c.items():
+    newc[x] = dict(y)
+
+with open('POSdict.pkl', 'wb') as handle:
+  pickle.dump(newp, handle)
+with open('Colocdict.pkl', 'wb') as handle:
+  pickle.dump(newc, handle)
