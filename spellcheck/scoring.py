@@ -2,8 +2,8 @@ import spellcheck
 
 def score(multi_edits,word):
     total_pblty =0
-    print word
-    print multi_edits
+#    print word
+#    print multi_edits
     for edits in multi_edits:
         res = 1
         for edit in edits:
@@ -81,4 +81,43 @@ def get_transformations(i,j,T,C,dist_matrix):
             list4 = map(lambda p: [('del', (C[j-1], C[j]))] + p, list4)
             list += list4
     return list
+
+def merge_wordscores(words_scores1,words_scores2,words_scores3,word):
+    first_three = words_scores1[:1]+words_scores2[:1]+words_scores3[:1]
+    #first_three = sorted(first_three, reverse=True, key=lambda x: x[1]);
+    nooffirstthree = 0
+    all_list = words_scores1[0:10] + words_scores2[0:10] + words_scores3[:10]
+    final_list = sorted(all_list,reverse = True , key=lambda x: x[0])[0:7]
+    return final_list
+
+def phonetic_distance(word1,word2):
+    phonetic1 =(spellcheck.jellyfish.metaphone(unicode(word1, "utf-8")))
+    phonetic2 =(spellcheck.jellyfish.metaphone(unicode(word2, "utf-8")))
+    return edit_distance(phonetic1,phonetic2)
+
+def edit_distance(T,C):
+    N = len(T)
+    M = len(C)
+    T = '{' + T
+    C = '{' + C
+    dist_matrix = [[0] * (M + 1) for i in range(N + 1)]
+    for i in range(N + 1):
+        dist_matrix[i][0] = i
+    for j in range(M + 1):
+        dist_matrix[0][j] = j
+    for i in range(1, N + 1):
+        for j in range(1, M + 1):
+            l = 0 if (T[i] == C[j]) else 1
+            dist_matrix[i][j] = min((dist_matrix[i - 1][j] + 1), (dist_matrix[i][j - 1] + 1),
+                                    (dist_matrix[i - 1][j - 1] + l))
+    return dist_matrix[N][M]
+
+def prune_candidates(candidates,word):
+    s = []
+    for i in range(len(candidates)):
+        if (phonetic_distance(word,candidates[i]) <= 2):
+            s += [candidates[i]]
+    return s
+
+
 
