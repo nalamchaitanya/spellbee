@@ -5,29 +5,46 @@ import string
 import re
 e = 2.43
 
-stwords = [str(x) for x in stopwords.words('english') if len(x)<4]
+def levenshtein(s, t):
+    m, n = len(s), len(t)
+    d = [range(n + 1)]
+    d += [[i] for i in range(1, m + 1)]
+    for i in range(0, m):
+        for j in range(0, n):
+            cost = 1
+            if s[i] == t[j]: cost = 0
 
+            d[i + 1].append(min(d[i][j + 1] + 1,  # deletion
+                                d[i + 1][j] + 1,  # insertion
+                                d[i][j] + cost)  # substitution
+                            )
+    return d[m][n]
+
+def error_type(phraselist) :
+    for k in phraselist :
+        if (k not in words) :
+            return SPELL_ERROR
+    return CONTEXT_ERROR
 
 def is_similar(ngram,phrase) :
+    length = 0
     for word in ngram :
-        if (word in phrase) :
-            return True
-    #for word in ngram :
-    #    if (len(word)<3) :
-    #        continue
-    #    for pw in phrase :
-    #       if ((word in pw)) :
-    #            return True
+        for pp in phrase :
+            if ((word in pp) | (pp in word)) :
+                length += 1
+                break
+    if ((length >= len(phrase)-1) & (length!=0)) :
+        return True
     return False
 
-def gen_trigrams(s) :
-    ret = [s[i:i+3] for i in range(len(s)-2)]
+def gen_grams(s,n) :
+    ret = [s[i:i+n] for i in range(len(s)-(n-1))]
     ret.sort()
     return ret
 
-def similarity(s1,s2) :
-    ret1 = gen_trigrams(s1)
-    ret2 = gen_trigrams(s2)
+def similarity(s1,s2,n) :
+    ret1 = gen_grams(s1,n)
+    ret2 = gen_grams(s2,n)
     if (len(ret1)==0 | len(ret2)==0) :
         return 0.0
     ret  = [val for val in ret1 if val in ret2]
@@ -35,22 +52,54 @@ def similarity(s1,s2) :
     l1 = len(ret1)
     l2 = len(ret2)
     #print ret1,ret2,ret
-    weight = float(5**l)/((float(5**abs(l2-l)))+float(3**abs(l1-l)))
+    weight = float(2**l)/((float(3**abs(l2-l)))+float(3**abs(l1-l)))
     return weight
 
-def solve(phrase) :
-    all_list = []
+def spell_correct(phraselist,matches) :
 
-    splits1 = phrase.split(' ')
-    splits1 = [k for k in splits1 if len(k)!=0 if k not in stwords]
+    wrongword = ''
+    suggestions = []
+    print phraselist
+    for i in range(len(phraselist)) :
+        if (phraselist[i] not in words):
+            wrongword = phraselist[i]
+            for match in matches:
+                s = match[1]
+                s.replace('\t',' ')
+
+                match[1].replace('\t', '')
+                if (wrongword in match[1]):
+                    phraselist[i] = s
+                    print s +" @@"
+                    suggestions.append(phraselist)
+                    return suggestions
+    candidates = []
+    index = 0
+    for i in range(len(phraselist)):
+        if (phraselist[i] not in words):
+            wrongword = phraselist[i]
+            index = i
+            for match in matches:
+                splits = match[1].split('\t')
+                splits = splits[1:]
+                for k in splits :
+                    d = levenshtein(wrongword,k)
+                    candidates.append((d,k))
+            break
+    candidates.sort()
+    phraselist[index] = candidates[0][1]
+    suggestions.append(phraselist)
+    return suggestions
+
+def solve(phrase) :
+
+    splits_st = phrase.split(' ')
+    splits1 = [k for k in splits_st if len(k)!=0 if k not in stwords]
     joinedphrase = ''.join(splits1)
 
     ret = []
     lis = bigrams+trigrams+fourgrams
     lis_ns = bigrams_ns+trigrams_ns+fourgrams_ns
-
-    st = time.time()
-    print joinedphrase
 
     ff = open("results",'w')
 
@@ -61,17 +110,22 @@ def solve(phrase) :
         splits2 = splits2[1:]
         if (is_similar(splits2,splits1)==False) :
             continue
-        #print splits1,splits2
         joinedngram = ''.join(splits2)
 
-        weight = similarity(joinedphrase,joinedngram)
+        weight = similarity(joinedphrase,joinedngram,3)*similarity(joinedphrase,joinedngram,4)
         joinedngram += str(weight)
         ff.write(" "+joinedphrase+' '+joinedngram+'\n')
-        ret.append((weight,val,lis[i]))
+        ret.append((weight*val,lis[i]))
 
     ret.sort()
     ret.reverse()
-    print ret
+    print ret[:10]
+    suggestions = ret[:2]
+    if (error_type(splits_st)==SPELL_ERROR) :
+        suggestions = spell_correct(splits_st,ret[:20])
+    #else :
+     #   suggestions = context_correct(splits_st,ret[:20])
+    return suggestions
 
 
 s= ""
@@ -80,6 +134,6 @@ while(True) :
     s = raw_input()
     if (s=='end') :
         break
-    solve(s)
-#print similarity('roofhouse','roffhouse')
+    print solve(s)
+
 exit(0)

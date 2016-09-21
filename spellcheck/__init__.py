@@ -11,9 +11,15 @@ from nltk.corpus import stopwords
 
 PROJECT_DIR=os.pardir
 DATA=PROJECT_DIR+"/data"
+SPELL_ERROR=1
+CONTEXT_ERROR=2
+
 
 stwords = [str(x) for x in stopwords.words('english') if len(x)<4]
-print stwords
+words = set([line.strip() for line in open(spellcheck.DATA+"/dict.txt",'r')])
+
+
+
 def file_as_list(f) :
     x = f.readline()
     l = []
