@@ -6,8 +6,10 @@ def colocGen(filename):
     colocDict = defaultdict(lambda:defaultdict(lambda:0))
     for line in open("../data/"+filename,'r'):
         list0 = line.strip().split("\t")
+        list0[4] = list0[4][0]
+        list0[5] = list0[5][0]
+        list0[6] = list0[6][0]
         count = int(line[0])
-
         tempDict = giveDict(list0[1:])
         for x,y in tempDict.items():
             posDict[x][y] += count
@@ -47,3 +49,5 @@ with open('POSdict.pkl', 'wb') as handle:
 with open('Colocdict.pkl', 'wb') as handle:
   pickle.dump(newc, handle)
 
+print c['desert']
+print c['dessert']
