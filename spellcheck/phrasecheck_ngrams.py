@@ -51,7 +51,7 @@ def similarity(s1,s2,n) :
     l = len(ret)
     l1 = len(ret1)
     l2 = len(ret2)
-    #print ret1,ret2,ret
+    ##print  ret1,ret2,ret
     weight = float(2**l)/((float(3**abs(l2-l)))+float(3**abs(l1-l)))
     return weight
 
@@ -59,24 +59,30 @@ def spell_correct(phraselist,matches) :
 
     wrongword = ''
     suggestions = []
-    print phraselist
+    fl = 0
     for i in range(len(phraselist)) :
         if phraselist[i] not in words:
             wrongword = phraselist[i]
-            print wrongword
+            #print  wrongword
             for match in matches :
                 s = copy.copy(match[1])
 
                 splitt = match[1].split('\t')
                 matching = ''.join(splitt[1:])
-                print wrongword,match[1]
+                #print  wrongword,match[1]
                 if wrongword in matching :
                     sp = s.split('\t')
-                    correct = ' '.join(sp[1:])
-                    phraselist[i] = correct
-                    suggestions.append(phraselist)
-                    return suggestions
-
+                    correct = ''
+                    for x in sp :
+                        if x in wrongword :
+                            correct += x+' '
+                    temp = copy.copy(phraselist)
+                    temp[i] = correct
+                    suggestions.append(temp)
+                    fl = 1
+                    break
+            if fl ==1 :
+                break
 
     candidates = []
     index = 0
@@ -87,13 +93,23 @@ def spell_correct(phraselist,matches) :
             for match in matches:
                 splits = match[1].split('\t')
                 splits = splits[1:]
+                #print splits
                 for k in splits :
                     d = levenshtein(wrongword,k)
-                    candidates.append((d,k))
-            break
+                    candidates.append((d,1.0/(1.0+jf.jaro_distance(k.decode('utf-8','ignore'),wrongword.decode('utf-8','ignore'))),k))
+
+
+    candidates = list(set(candidates))
     candidates.sort()
-    phraselist[index] = candidates[0][1]
-    suggestions.append(phraselist)
+    print candidates
+    temp = copy.copy(phraselist)
+    temp[index] = candidates[0][2]
+    suggestions.append(temp)
+    if len(suggestions)<2 :
+        temp = copy.copy(phraselist)
+        temp[index] = candidates[1][2]
+        suggestions.append(temp)
+
     return suggestions
 
 def compare_context(phraselist_nst,ngramlist) :
@@ -148,7 +164,7 @@ def solve(phrase) :
 
         val = float(splits2[0])
         splits2 = splits2[1:]
-        if (is_similar(splits2,splits1)==False) :
+        if is_similar(splits2,splits1)==False :
             continue
         joinedngram = ''.join(splits2)
 
@@ -159,21 +175,28 @@ def solve(phrase) :
 
     ret.sort()
     ret.reverse()
-    print ret[:10]
+    #print  ret[:10]
     suggestions = ret[:2]
-    if (error_type(splits_st)==SPELL_ERROR) :
+    if error_type(splits_st)==SPELL_ERROR :
         suggestions = spell_correct(splits_st,ret[:20])
     else :
         suggestions = context_correct(splits_st,splits1,ret[:20])
+    for k in suggestions:
+        correct_phrase = ' '.join(k)
+        print correct_phrase
     return suggestions
 
-
+'''
 s= ""
-print "enter in"
-while(True) :
+print  "enter input"
+while True  :
     s = raw_input()
-    if (s=='end') :
+    if  s=='end' :
         break
-    print solve(s)
+    suggestions = solve(s)
+    for k in suggestions :
+        correct_phrase = ' '.join(k)
+        print correct_phrase
+'''
 
 exit(0)

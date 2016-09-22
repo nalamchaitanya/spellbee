@@ -10,19 +10,14 @@ from bigrams_counts import *
 from bigrams_counts import *
 #from wordcheck import *
 from scoring import *
-import time
-import nltk
-import math
-from Collocations import *
-from phrasecheck import *
-# if __name__ == "__main__":
-#     spellcheck.words = set(spellcheck.get_dictionary('norvig.txt'))
-#     print spellcheck.gen_candidates('god')
-# print 'hi'
+
+#from Collocations import *
+#from phrasecheck import *
+
 from nltk.corpus import stopwords
 
 
-'''
+
 SPELL_ERROR=1
 CONTEXT_ERROR=2
 
@@ -71,4 +66,3 @@ f.close()
 #fivegrams = file_as_list(f)
 #fivegrams_ns =  [removestopwords(k) for k in fivegrams]
 #f.close()
-'''
