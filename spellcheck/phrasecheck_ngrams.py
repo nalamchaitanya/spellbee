@@ -58,7 +58,7 @@ def similarity(s1,s2,n) :
 def spell_correct(phraselist,matches) :
 
     wrongword = ''
-    suggestions = []
+    suggestions = {}
     fl = 0
     for i in range(len(phraselist)) :
         if phraselist[i] not in words:
@@ -78,7 +78,7 @@ def spell_correct(phraselist,matches) :
                             correct += x+' '
                     temp = copy.copy(phraselist)
                     temp[i] = correct
-                    suggestions.append(temp)
+                    suggestions[temp[i]] = [(correct,match[0])]
                     fl = 1
                     break
             if fl ==1 :
@@ -101,14 +101,15 @@ def spell_correct(phraselist,matches) :
 
     candidates = list(set(candidates))
     candidates.sort()
-    print candidates
     temp = copy.copy(phraselist)
     temp[index] = candidates[0][2]
-    suggestions.append(temp)
+    if (len(suggestions)==0) :
+        suggestions[temp[index]] =[]
+    suggestions[temp[index]].append((candidates[0][2],candidates[0][0]))
     if len(suggestions)<2 :
         temp = copy.copy(phraselist)
         temp[index] = candidates[1][2]
-        suggestions.append(temp)
+        suggestions[temp[index]].append(candidates[1][2],candidates[1][0])
 
     return suggestions
 
@@ -186,7 +187,7 @@ def solve(phrase) :
         print correct_phrase
     return suggestions
 
-'''
+
 s= ""
 print  "enter input"
 while True  :
@@ -197,6 +198,5 @@ while True  :
     for k in suggestions :
         correct_phrase = ' '.join(k)
         print correct_phrase
-'''
 
 exit(0)
