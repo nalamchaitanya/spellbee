@@ -246,10 +246,9 @@ exit(0)
 '''
 
 s= ""
-print  "enter input"
 while True  :
     s = raw_input()
-    if  len(s)==0 :
+    if  s=='EOF' :
         break
     st = time.time()
     ans = solve(s)
