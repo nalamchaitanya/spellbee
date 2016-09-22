@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fa92858f-5a6e-4430-b67d-4ac73e21c32f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spellcheck/phrasecheck_ngrams.py" afterPath="$PROJECT_DIR$/spellcheck/phrasecheck_ngrams.py" />
     </list>
     <ignored path="spellbee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,7 +22,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="phrasecheck_ngrams.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="phrasecheck_ngrams.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spellcheck/phrasecheck_ngrams.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="508">
@@ -35,15 +34,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-486">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1474541785515" expanded="true" signature="10520:10537" ph="..." />
-                <marker date="1474541785515" expanded="true" signature="10520:10555" ph="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1474540995848</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Almost final changes">
+      <created>1474541797502</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1474541797502</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -141,17 +144,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1474541785515" expanded="true" signature="10520:10537" ph="..." />
-            <marker date="1474541785515" expanded="true" signature="10520:10555" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spellcheck/phrasecheck_ngrams.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="508">
@@ -159,6 +151,14 @@
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-486">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
