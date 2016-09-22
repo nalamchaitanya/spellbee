@@ -45,8 +45,8 @@ def giveScore(ind,word,words):
     scr=0
     print (word,pos,posCollocs)
     for colloc in posCollocs:
-        if (pos, colloc) in colocDict[word].keys():
-            scr+=colocDict[word][(pos,colloc)]
+        if colloc in colocDict[word].keys():
+            scr+=colocDict[word][colloc]
         else :
             scr += float(sum(posDict[word].values()))/float(len(colocDict[word]))
     return scr/float(sum(posDict[word].values()))

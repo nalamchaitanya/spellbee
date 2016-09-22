@@ -32,9 +32,9 @@ def giveDict(list0):
 
 def giveCollocs(trigram):
     temp = []
-    temp.append((trigram[0+3], ("_", trigram[1+3], trigram[2+3])))
-    temp.append((trigram[1+3], (trigram[0+3], "_", trigram[2+3])))
-    temp.append((trigram[2+3], (trigram[0+3], trigram[1+3], "_")))
+    temp.append(("_", trigram[1+3], trigram[2+3]))
+    temp.append((trigram[0+3], "_", trigram[2+3]))
+    temp.append((trigram[0+3], trigram[1+3], "_"))
     return temp
 
 (p,c) = colocGen("w3c.txt")
