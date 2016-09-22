@@ -1,21 +1,20 @@
 import time
-from spellcheck import *
+#from spellcheck import *
 import  copy
 import jellyfish as jf
+import sys
+from nltk.corpus import stopwords
 
 SPELL_ERROR=1
 CONTEXT_ERROR=2
-
-
 stwords = [str(x) for x in stopwords.words('english') if len(x)<4]
-words = set([line.strip() for line in open(spellcheck.DATA+"/dict.txt",'r')])
-
+words = set([line.strip() for line in open('../data/dict.txt','r')])
 
 
 def file_as_list(f) :
     x = f.readline()
     l = []
-    while (len(x)!=0) :
+    while len(x)!=0 :
         l.append(x.strip())
         x = f.readline()
     return l
@@ -26,26 +25,29 @@ def removestopwords(s) :
             lis.remove(k)
     ret = lis[0]
     if ('the' in lis) :
-        print lis ,2
+        x = 1
     for k in lis[1:] :
         ret += '\t'
         ret += k
     return ret
 
-f = open(DATA+'/w2_.txt','r')
+f = open('../data/w2_.txt','r')
 bigrams = file_as_list(f)
 bigrams_ns = [removestopwords(k) for k in  bigrams ]
 f.close()
 
-f = open(DATA+'/w3_.txt','r')
+f = open('../data/w3_.txt','r')
 trigrams = file_as_list(f)
 trigrams_ns = [removestopwords(k) for k in trigrams]
 f.close()
 
-f = open(DATA+'/w4_.txt','r')
+f = open('../data/w4_.txt','r')
 fourgrams = file_as_list(f)
 fourgrams_ns =  [removestopwords(k) for k in fourgrams]
 f.close()
+
+lis = bigrams+trigrams+fourgrams
+lis_ns = bigrams_ns+trigrams_ns+fourgrams_ns
 
 
 def levenshtein(s, t):
@@ -169,7 +171,7 @@ def compare_context(phraselist_nst,ngramlist) :
 
 
 def context_correct(splits_st,splits_nst, matches):
-    suggestions = []#[matches[i][1].split('\t')[1:] for i in range(2)]
+    suggestions = [(matches[i][0],matches[i][1].split('\t')[1:]) for i in range(2)]
     candidates = []
     for match in matches :
         val = float(match[0])
@@ -182,8 +184,11 @@ def context_correct(splits_st,splits_nst, matches):
             val *= 3**(len(l)-len(l12)-len(l21))
             candidates.append((val,wt,matching))
     candidates.sort()
-    candidates.reverse()
-    suggestions.append((candidates[0][2],candidates[0][0]))
+
+    suggestions.append((candidates[0][0],candidates[0][2]))
+    suggestions.sort()
+    suggestions.reverse()
+    suggestions = [(k[1],k[0]) for k in suggestions]
     return suggestions
 
 def solve(phrase) :
@@ -193,10 +198,6 @@ def solve(phrase) :
     joinedphrase = ''.join(splits1)
 
     ret = []
-    lis = bigrams+trigrams+fourgrams
-    lis_ns = bigrams_ns+trigrams_ns+fourgrams_ns
-
-    ff = open("results",'w')
 
     for i in range(len(lis_ns)) :
         splits2 = lis_ns[i].split('\t')
@@ -209,19 +210,18 @@ def solve(phrase) :
 
         weight = similarity(joinedphrase,joinedngram,3)*similarity(joinedphrase,joinedngram,4)
         joinedngram += str(weight)
-        ff.write(" "+joinedphrase+' '+joinedngram+'\n')
         ret.append((weight*val,lis[i]))
 
     ret.sort()
     ret.reverse()
-    #print  ret[:10]
-    #suggestions = ret[:2]
+
     if error_type(splits_st)==SPELL_ERROR :
         suggestions = spell_correct(splits_st,ret[:20])
     else :
         suggestions = context_correct(splits_st,splits1,ret[:20])
 
     ans = ""
+    #print suggestions
     for k in suggestions :
         for wd in k[0] :
             ans += wd+'\\'
@@ -229,14 +229,30 @@ def solve(phrase) :
         ans += str(k[1])
         ans += '\t'
     return ans
-
+'''
+print "printing answers..."
+input = open(sys.argv[1],'r')
+output = open(sys.argv[2],'w')
+s = ""
+while (True):
+    s = input.readline()
+    if s==None :
+        break
+    ans = solve(s)
+    output.write(s+'\t'+ans+'\n')
+input.close()
+output.close()
+exit(0)
+'''
 
 s= ""
 print  "enter input"
 while True  :
     s = raw_input()
-    if  s=='end' :
+    if  len(s)==0 :
         break
+    st = time.time()
     ans = solve(s)
-    print ans
+    en = time.time()
+    print s+'\t'+ans
 exit(0)
