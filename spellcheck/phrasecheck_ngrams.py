@@ -58,7 +58,7 @@ def similarity(s1,s2,n) :
 def spell_correct(phraselist,matches) :
 
     wrongword = ''
-    suggestions = {}
+    suggestions = []
     fl = 0
     for i in range(len(phraselist)) :
         if phraselist[i] not in words:
@@ -78,12 +78,10 @@ def spell_correct(phraselist,matches) :
                             correct += x+' '
                     temp = copy.copy(phraselist)
                     temp[i] = correct
-                    suggestions[temp[i]] = [(correct,match[0])]
-                    fl = 1
-                    break
-            if fl ==1 :
-                break
-
+                    if len(correct)!=0 :
+                        suggestions.append((temp,match[0]))
+                        fl = 1
+                        return suggestions
     candidates = []
     index = 0
     for i in range(len(phraselist)):
@@ -103,13 +101,11 @@ def spell_correct(phraselist,matches) :
     candidates.sort()
     temp = copy.copy(phraselist)
     temp[index] = candidates[0][2]
-    if (len(suggestions)==0) :
-        suggestions[temp[index]] =[]
-    suggestions[temp[index]].append((candidates[0][2],candidates[0][0]))
+    suggestions.append((temp,1.0/candidates[0][0]))
     if len(suggestions)<2 :
         temp = copy.copy(phraselist)
         temp[index] = candidates[1][2]
-        suggestions[temp[index]].append(candidates[1][2],candidates[1][0])
+        suggestions.append((temp,1.0/candidates[1][0]))
 
     return suggestions
 
@@ -130,7 +126,7 @@ def compare_context(phraselist_nst,ngramlist) :
 
 
 def context_correct(splits_st,splits_nst, matches):
-    suggestions = [matches[i][1].split('\t')[1:] for i in range(2)]
+    suggestions = []#[matches[i][1].split('\t')[1:] for i in range(2)]
     candidates = []
     for match in matches :
         val = float(match[0])
@@ -144,8 +140,7 @@ def context_correct(splits_st,splits_nst, matches):
             candidates.append((val,wt,matching))
     candidates.sort()
     candidates.reverse()
-    if (len(candidates)>=2) :
-        suggestions = [candidates[i][2] for i in range(2)]
+    suggestions.append((candidates[0][2],candidates[0][0]))
     return suggestions
 
 def solve(phrase) :
@@ -177,15 +172,20 @@ def solve(phrase) :
     ret.sort()
     ret.reverse()
     #print  ret[:10]
-    suggestions = ret[:2]
+    #suggestions = ret[:2]
     if error_type(splits_st)==SPELL_ERROR :
         suggestions = spell_correct(splits_st,ret[:20])
     else :
         suggestions = context_correct(splits_st,splits1,ret[:20])
-    for k in suggestions:
-        correct_phrase = ' '.join(k)
-        print correct_phrase
-    return suggestions
+
+    ans = ""
+    for k in suggestions :
+        for wd in k[0] :
+            ans += wd+'\\'
+        ans += '\t'
+        ans += str(k[1])
+        ans += '\t'
+    return ans
 
 
 s= ""
@@ -194,9 +194,6 @@ while True  :
     s = raw_input()
     if  s=='end' :
         break
-    suggestions = solve(s)
-    for k in suggestions :
-        correct_phrase = ' '.join(k)
-        print correct_phrase
-
+    ans = solve(s)
+    print ans
 exit(0)
