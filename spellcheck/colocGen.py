@@ -1,3 +1,5 @@
+# import numpy
+# import spellcheck
 from collections import defaultdict
 
 import pickle
@@ -10,6 +12,7 @@ def colocGen(filename):
         list0[5] = list0[5][0]
         list0[6] = list0[6][0]
         count = int(line[0])
+
         tempDict = giveDict(list0[1:])
         for x,y in tempDict.items():
             posDict[x][y] += count
@@ -49,5 +52,3 @@ with open('POSdict.pkl', 'wb') as handle:
 with open('Colocdict.pkl', 'wb') as handle:
   pickle.dump(newc, handle)
 
-print c['desert']
-print c['dessert']
